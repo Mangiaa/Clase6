@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>El barsito de la esquina</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  
+    <h1 id="titulo">Hola!</h1>
+    <h2>Vamos a escribir un poco de codigo hoy!</h2>
+  <form id="formulario">
+        <input type="number" placeholder="Numero de familiares a calcular?" id="cantidad-integrantes">
+        <button type="button" id="boton-primer-paso">Calculemos!</button>
+        
+      <div id="cantidad-familiares">
+        
+      </div>
+    <button type="button" id="resetear">Resetear</button>
+    <button type="button" id="boton-segundo-paso" class="oculto">A calcular!</button>
+    <div id="analisis" class="oculto">
+      <p>El promedio de edad es de: <strong id="promedio-edad"> </strong> </p>
+      <p>El numero mayor es: <strong id="mayor-edad"> </strong> </p>
+      <p>El numero menor es: <strong id="menor-edad"> </strong></p> 
+    </div>
+
+  </form>
+
+
+
+  <script src="calculos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
