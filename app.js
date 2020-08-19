@@ -23,14 +23,13 @@ document.querySelector('#boton-primer-paso').onclick = function (e) {
     const $cantidadDeIntegrantes = document.querySelector('#cantidad-integrantes')
     const cantidadDeIntegrantes = Number($cantidadDeIntegrantes.value)
     borrarIntegrantes()
-    crearIntegrantes(cantidadDeIntegrantes)
-   
-    
+    crearIntegrantes(cantidadDeIntegrantes) 
 }
 
 document.querySelector('#resetear').onclick=function (e) {
     e.preventDefault
     ocultarDiv()
+    borrarBoton()
 }
 
 document.querySelector("#boton-segundo-paso").onclick = function(e){
@@ -90,19 +89,28 @@ function mostrarBoton() {
     $mostrarBoton.classList.remove("oculto")  
 }
 
+function borrarBoton() {
+    const $borrarBoton = document.querySelector('#boton-segundo-paso')
+    $borrarBoton.className = 'oculto'  
+}
+
 function mostarDiv(){
     document.querySelector(".oculto").classList.remove("oculto")
 }
+
 function ocultarDiv() {
     document.querySelector("#analisis").className = "oculto"
     
-    document.querySelector('#cantidad-familiares').remove()  
+    if(document.querySelector('#cantidad-familiares')){
+        document.querySelector('#cantidad-familiares').remove()
+    }
+      
 }
+
 function borrarIntegrantes(){
     const $integrantesViejos = document.querySelectorAll('.edades')
 
     for (let i = 0; i < $integrantesViejos.length; i++) {
-            $integrantesViejos[i].remove()
-        
+            $integrantesViejos[i].remove()   
     }
 }
