@@ -22,7 +22,9 @@ document.querySelector('#boton-primer-paso').onclick = function (e) {
     e.preventDefault()
     const $cantidadDeIntegrantes = document.querySelector('#cantidad-integrantes')
     const cantidadDeIntegrantes = Number($cantidadDeIntegrantes.value)
+    borrarIntegrantes()
     crearIntegrantes(cantidadDeIntegrantes)
+   
     
 }
 
@@ -94,6 +96,13 @@ function mostarDiv(){
 function ocultarDiv() {
     document.querySelector("#analisis").className = "oculto"
     
-    document.querySelector('#cantidad-familiares').remove()
-    
+    document.querySelector('#cantidad-familiares').remove()  
+}
+function borrarIntegrantes(){
+    const $integrantesViejos = document.querySelectorAll('.edades')
+
+    for (let i = 0; i < $integrantesViejos.length; i++) {
+            $integrantesViejos[i].remove()
+        
+    }
 }
